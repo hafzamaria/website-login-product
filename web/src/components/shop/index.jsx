@@ -34,7 +34,7 @@ function Shop() {
 
   return (
     <div className='flex1'>
-      {/* <h1>Product List: </h1> */}
+      <h1>Product List: </h1>
 
       <div className='result'>
         <div className="map1">
@@ -50,7 +50,7 @@ function Shop() {
               <p className="price"><span className='price'>{eachProduct.price}</span><span>pkr</span></p>
               </div>
                <button ><Link to='/cart'>Add to cart</Link></button>
-              <hr />
+              
             </div>
           
         ))}

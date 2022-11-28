@@ -107,18 +107,18 @@ function Product() {
     <div className='flex1'>
       <div className="main">
   <div className='start'>
-  <h1>PRODUCT FORM</h1>
+  <h2>PRODUCT FORM</h2>
   </div>
 
         <form onSubmit={producthandler}>
           
-          title: <input name="title" type="text" value={title} placeholder="title" id='title' onChange={(e) => { setTitle(e.target.value) }} />
+          title: <input name="title" type="text" value={title} placeholder="" id='title' onChange={(e) => { setTitle(e.target.value) }} />
           <br />
-          description: <input name="description" type="text" placeholder="description" id='description' onChange={(e) => { setDescription(e.target.value) }} />
+          description: <input name="description" type="text" placeholder="" id='description' onChange={(e) => { setDescription(e.target.value) }} />
           <br />
-          price: <input name="price" type="Number" placeholder="price" id='price' onChange={(e) => { setPrice(e.target.value) }} />
+          price: <input name="price" type="Number" placeholder="" id='price' onChange={(e) => { setPrice(e.target.value) }} />
           <br />
-          code: <input name="code" type="Number" placeholder="code" id='code' onChange={(e) => { setCode(e.target.value) }} />
+          code: <input name="code" type="Number" placeholder="" id='code' onChange={(e) => { setCode(e.target.value) }} />
           <br />
           productimage: <input type="file" id="productimage" accept='image/*'
             onChange={() => {
@@ -223,7 +223,7 @@ function Product() {
 
 
 </div>
-              <hr />
+              
             </div>
           
         ))}

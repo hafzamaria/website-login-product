@@ -1,9 +1,10 @@
 import Login from './components/login';
 import Signup from './components/signup';
 import Profile from './components/profile';
-import Home from  './components/home'
-import NavBar from './components/Navbar';
-
+import Home from './components/Home';
+import Header from './components/Header';
+import {ThemeProvider} from 'styled-components';/////npm i styled components from npm react-router-dom(search(styled components))
+import { GlobalStyle} from './GlobalStyle'
 import Product from './components/product/index'
 import './App.css';
 import {
@@ -28,6 +29,25 @@ import Cart from './components/cart/Cart';
 
 
 function App() {
+  const theme={
+    colors:{
+      heading : "rgb(24 24 29)",
+      text: "rgb(24 24 29)",
+      white : "fff",
+      black : "#212529",
+      helper: "#8490ff",
+      bg : "rgb(249 249 255)",
+      footer_bg : "#0a1435",
+      btn : "rgb(98 84 243)",
+      border : "rgba(98 84 243 0.5)",
+      hr : "#ffffff",
+      gradient: "linear-gradient(0deg,rgb(132 144 255) 0%,rgb(98 189 252) 100%)",
+      shadow : "rgba(0 0 0 0.02) 0px 1px 3px 0px, rgba(27 31 35 0.15) 0px 0px 0px 1px;",
+      shawdowSupport : "rgba(0 0 0 0.16) 0px 1px 4px",
+  
+    },
+    media : {mobile : "768px" ,tab : "998px"},
+    }
 
   let { state, dispatch } = useContext(GlobalContext);
 
@@ -64,9 +84,12 @@ function App() {
   }, [])
   return (
     <>
-
+   
+   <ThemeProvider theme={theme}>
+    <GlobalStyle/>
       <Router>
-        <NavBar />
+      <Header/>
+        {/* <NavBar /> */}
 
         <Routes>
           {(state.isLogin === true) ?
@@ -95,7 +118,7 @@ function App() {
 
         </Routes>
       </Router>
-
+      </ThemeProvider>
     </>
 
   );
