@@ -3,6 +3,7 @@ import Signup from './components/signup';
 import Profile from './components/profile';
 import Home from './components/Home';
 import Header from './components/Header';
+import Contact from './components/Contact';
 import {ThemeProvider} from 'styled-components';/////npm i styled components from npm react-router-dom(search(styled components))
 import { GlobalStyle} from './GlobalStyle'
 import Product from './components/product/index'
@@ -93,7 +94,8 @@ function App() {
 
         <Routes>
           {(state.isLogin === true) ?
-            <>
+            <>  
+            <Route path='/Contact' element={<Contact/>} />
               <Route path='/profile' element={<Profile />} />
               <Route path='/product' element={<Product/>} />
               <Route path='/shop' element={<Shop/>} />
