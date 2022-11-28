@@ -12,14 +12,14 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import axios from 'axios';
+import axios from 'axios'
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Maria&Co
+        kidswish
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -29,41 +29,39 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignUp() {
-  const handleSubmit = async (event) => {
+export default function Signup() {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-        firstName:data.get('firstName'),
-        lastName:data.get('lastName'),
       email: data.get('email'),
       password: data.get('password'),
-      agree:data.get('agree'),
-      
+      name : data.get('name'),
+      lastName : data.get('lastName'),
+      agree : data.get('agree')
     });
-   
-    let baseUrl = 'http://localhost:5000';
-    try{
-      let response =   await axios.post(`${baseUrl}/signup`,{
-        firstName:data.get('firstName'),
-        lastName:data.get('lastName'),
-        email:data.get('email'),
-        password: data.get('password'),
-        image:data.get('image')
-        
-      })
-    
-      console.log('response:', response.data.message);
-    
-    
-    }catch (e) {
-      console.log('Error in api call :' , e);
-    
-    }
 
+    let baseUrl = "http://localhost:5000";
+   
+    axios.post(`${baseUrl}/signup`, {
+      email : data.get('email'),
+      password : data.get('password'),
+      name : data.get('name'),
+      lastName : data.get('lastName')
+      
+     })
+     .then(function (response) {
+       console.log("response:" ,response.data.message);
+       alert(response.data.message);
+       
+       
+     })
+     .catch(function (error) {
+       console.log("error in api call" , error);
+       alert(error.response.data.message)
+     });
 
   };
-
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -87,11 +85,11 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="name"
                   required
                   fullWidth
-                  id="firstName"
-                  label="First Name"
+                  id="name"
+                  label=" name"
                   autoFocus
                 />
               </Grid>
@@ -105,28 +103,6 @@ export default function SignUp() {
                   autoComplete="family-name"
                 />
               </Grid>
-               {/* adding Feilds */}
-               {/* <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="firstName"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="family-name"
-                />
-              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   required
@@ -148,17 +124,19 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
+
               <Grid item xs={12}>
                 <TextField
-                //   required
+                  required
                   fullWidth
                   name="address"
                   label="address"
                   type="text"
-                  id='address'
-               
+                  id="address"
+                  
                 />
               </Grid>
+              
               <Grid item xs={12}>
                 <FormControlLabel
                   control={<Checkbox name='agree' value="allowExtraEmails" color="primary" />}

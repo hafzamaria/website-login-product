@@ -1,3 +1,4 @@
+
 import { GlobalContext } from "../../context";
 import { useContext, useState, useEffect } from "react";
 import axios from "axios";
@@ -13,19 +14,19 @@ const Cart = () => {
   // let { state, dispatch } = useContext(GlobalContext);
   //  let cart = state.cart
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    let getAllcarts = async () => {
-      //let response = await axios.get('https://storage-bucket-production.up.railway.app/products');
-      let response = await axios.get('http://localhost:5000/carts', { withCredentials: true });
+  //   let getAllCarts = async () => {
+  //     //let response = await axios.get('https://storage-bucket-production.up.railway.app/products');
+  //     let response = await axios.get('http://localhost:5000/carts', { withCredentials: true });
+  //     // let response = await axios.get('http://localhost:5000/items');
+  //     setCarts(response.data.data)
 
-      setCarts(response.data.data)
+  //     console.log(response.data.data, "cart")
+  //   }
+  //   getAllCarts();
 
-      console.log(response.data.data, "cart")
-    }
-    getAllcarts();
-
-  }, [toggleRefresh])
+  // }, [toggleRefresh])
 
  
 
@@ -33,8 +34,8 @@ const Cart = () => {
 
   return (
     <div>
-    <h1>I am Cart</h1>
-
+    
+             <h1>I am Cart</h1>
       {/* <div>
                     
                     

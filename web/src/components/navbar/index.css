@@ -6,12 +6,12 @@
     justify-content: space-between;
   }
   .nav>.userName{
-    color: white;
+    color:black;
     margin-top: 22px;
     margin-left: 20px; 
   }
-
- .nav>ul{
+  
+  .nav>ul{
     display: flex;
   justify-content: flex-end;
   
