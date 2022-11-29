@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios'
+import './index.css'
 
 function Copyright(props) {
   return (
@@ -36,7 +37,7 @@ export default function Signup() {
     console.log({
       email: data.get('email'),
       password: data.get('password'),
-      name : data.get('name'),
+      firstName : data.get('firstName'),
       lastName : data.get('lastName'),
       agree : data.get('agree')
     });
@@ -46,7 +47,7 @@ export default function Signup() {
     axios.post(`${baseUrl}/signup`, {
       email : data.get('email'),
       password : data.get('password'),
-      name : data.get('name'),
+      firstName : data.get('firstName'),
       lastName : data.get('lastName')
       
      })
@@ -85,11 +86,11 @@ export default function Signup() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="name"
+                  name="firstName"
                   required
                   fullWidth
-                  id="name"
-                  label=" name"
+                  id="firstName"
+                  label=" firstName"
                   autoFocus
                 />
               </Grid>
@@ -166,3 +167,4 @@ export default function Signup() {
     </ThemeProvider>
   );
 }
+

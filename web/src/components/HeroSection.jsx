@@ -9,12 +9,13 @@ const HeroSection = ({name,image}) => {
     <Wrapper>
      <div className='container grid grid-two-coloumn'>
       <div className="section-hero-data">
-        <p className='hero-top-data'>THIS IS ME</p>
+        <p className='hero-top-data'>Welcome to</p>
         <h1 className='hero-heading'>{name}</h1>
-        <p className='hero-para'>I am Hafza Maria.A Full Stack Developer,YouTuber and Freelancer.
-          A Full Stack Developer,YouTuber and Freelancer.</p>
+        <p className='hero-para'>We have all type of varities & lods of discount packages.
+        Come and shop your favourite products in reasonable prices.</p>
+        
           <Button className='btn hireme-btn'>
-            <NavLink to='/Contact'>hire me</NavLink>
+            <NavLink to='/Contact'>Contact here</NavLink>
           </Button>
       </div>
       <div className="section-hero-image">
@@ -29,29 +30,37 @@ const HeroSection = ({name,image}) => {
 }
 const Wrapper = styled.section`
 padding:9rem 0;
+
 .section-hero-data{
     display:flex;
     flex-direction:column;
     justify-content:center;
 }
 .btn{
-    max-width:16rem;
+    max-width:12rem;
+    max-height:5rem;
+    padding:1rem 1.2rem;
+}
+a{
+  
+   font-size:1rem;
 }
 .hero-top-data{
     text-transform:uppercase;
     font-weight:500;
-    font-size:1.5rem;
+    font-size:1rem;
     color:${({theme})=>theme.colors.helper}
 }
 .hero-heading{
-    text-transform:uppercase;
-    font-size:4.5rem;
+    text-transform:;
+    font-size:3.5rem;
+   
 }
 .hero-para{
     margin-top:1.5rem;
     margin-bottom:3.4rem;
-    max-width:60rem;
-    font-size:1.3rem;
+    max-width:40rem;
+    font-size:1rem;
 }
 .section-hero-image{
     display:flex;

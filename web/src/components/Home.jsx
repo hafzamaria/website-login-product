@@ -4,12 +4,12 @@ import HeroSection from './HeroSection'
 
 const Home = () => {
   const data={
-    name:'Hafza Maria',
-    image:'./image/about1.jpg'
+    name:'TheEShop',
+    image:'./image/eshop1.png'
   }
   return (
     <div>
-      I am Home
+    
       <HeroSection {...data}/>
     </div>
   )

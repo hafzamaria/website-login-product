@@ -107,7 +107,7 @@ function Product() {
     <div className='flex1'>
       <div className="main">
   <div className='start'>
-  <h2>PRODUCT FORM</h2>
+  <h2 className='product-form'>PRODUCT FORM</h2>
   </div>
 
         <form onSubmit={producthandler}>
@@ -120,18 +120,18 @@ function Product() {
           <br />
           code: <input name="code" type="Number" placeholder="" id='code' onChange={(e) => { setCode(e.target.value) }} />
           <br />
-          productimage: <input type="file" id="productimage" accept='image/*'
+          productimage: <input className='img' type="file" id="productimage" accept='image/*'
             onChange={() => {
               ////// to display imager instantly on screen
               var productimage = document.getElementById("productimage");
               var url = URL.createObjectURL(productimage.files[0])
               console.log("url: ", url);
-              document.getElementById("img").innerHTML = `<img width="200px" src="${url}" alt="" id="img"> `
+              document.getElementById("img").innerHTML = `<img width="170px" src="${url}" alt="" id="img"> `
             }} />
 
 
 <div className="sign">
-        <div id="img"></div>
+        <div width='170PX'  id="img"></div>
 
         <div className="msg">
           <button className="but" type="submit">

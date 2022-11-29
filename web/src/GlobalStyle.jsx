@@ -14,7 +14,7 @@ font-family: 'Work Sans', sans-serif;
 };
 html
 {
-    font-size: 62.5%;
+    
     overflow-x : hidden;
 }
 h1
@@ -71,4 +71,5 @@ li
 .grid-four-column{
     grid-template-columns:1fr 1.2fr .5fr .8fr;
 }
+
 `;

@@ -26,7 +26,9 @@ const Navbar = () => {
     }
     return (
     <Nav>
+        
     <div className="menuIcon">
+   
         <div className="navbar-list"> 
         {(state.isLogin === true)?////authgaurd//jwt work
     <>  
@@ -72,9 +74,10 @@ const Navbar = () => {
 }
 
 const Nav = styled.nav`
+
 .navbar-list{
     display:flex;
-    gap:4.8rem;
+    gap:1.75rem;
     
      li{
         list-style:none; 
@@ -83,7 +86,8 @@ const Nav = styled.nav`
             &:visited{
                 display:inline-block;
                 text-decoration:none;
-                font-size:1.8rem;
+                font-size:1rem;
+                
                 text-transform:uppercase;
                 color:${({theme})=>theme.colors.black};
                 transition:color 0.3s linear;
