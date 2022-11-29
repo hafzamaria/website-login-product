@@ -12,7 +12,7 @@ const Header = () => {
 <MainHeader>
     {/* <NavLink to='/'> */}
         {/* <img src='' alt='logo' className='logo'/> */}
-        <div className="userName">{state?.user?.firstName} {state?.user?.lastName}</div>
+        <div className="userName">{state?.user?.profilePicture}{state?.user?.firstName} {state?.user?.lastName}</div>
     {/* </NavLink> */}
     <Navbar/>
 </MainHeader>

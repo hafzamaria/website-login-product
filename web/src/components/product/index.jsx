@@ -120,7 +120,7 @@ function Product() {
           <br />
           code: <input name="code" type="Number" placeholder="" id='code' onChange={(e) => { setCode(e.target.value) }} />
           <br />
-          productimage: <input className='img' type="file" id="productimage" accept='image/*'
+          productimage: <input className='' type="file" id="productimage" accept='image/*'
             onChange={() => {
               ////// to display imager instantly on screen
               var productimage = document.getElementById("productimage");

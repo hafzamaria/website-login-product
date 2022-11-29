@@ -25,6 +25,8 @@ let Profile = () => {
                     email: {state.user?.email}
                     <br />
                     age: {state.user?.age}
+                    <br/>
+                    profilePicture:{state.user?.profilePicture}
                 </div>
             }
 
